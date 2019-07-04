@@ -38,3 +38,10 @@ def parsed_dict(df, nest_dict):
         nest_dict = json.loads(row)
         results.append(merge(daily_goals(nest_dict), daily_totals(nest_dict)))
     return results
+
+
+def end_date_col(df):
+    """Creates a new column with the previous date of the diary_date column"""
+    for index, row in df.iterrows():
+        if (index != len(df) - 1):
+            df.loc[index, 'end_date'] = df.loc[index + 1, 'diary_date']
