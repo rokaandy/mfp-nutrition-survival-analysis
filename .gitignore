@@ -1,3 +1,7 @@
+#ignore large data files
+data/
+pkl/end_date.pkl
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
