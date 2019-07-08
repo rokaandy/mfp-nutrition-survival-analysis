@@ -10,12 +10,12 @@ def index():
     """Return the main page."""
     return render_template("index.html")
 
-# with open('pkl/model.pkl', 'rb') as f:
-#     model = pickle.load(f)
+with open('pkl/model.pkl', 'rb') as f:
+    model = pickle.load(f)
 
 # def prediction(user_input, model):
 #     """Predict when a user will drop off the application"""
-#     user_input = np.array((user_input))
+#     # user_input = np.array((user_input))
 #     df = pd.DataFrame(user_input).T
 #     probability = model.predict_proba(df)
 #     return probability
@@ -28,6 +28,10 @@ def output():
     print(data)
     # store user input data in dictionary
     df = pd.DataFrame(data=[data])
-    print(df)
+    # print(df)
+    # Store predictions from model
+    predictions = model.predict_proba(df)
+    output = {"probability_churn": predictions[0][0],
+              "probability_not_churn": predictions[0][1]}
     # output dictionary to web
-    return jsonify(data)
+    return jsonify(output)
