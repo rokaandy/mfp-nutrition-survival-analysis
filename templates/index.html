@@ -30,19 +30,48 @@
           req.bind("complete", show_results)
           req.open("POST", "/output", True)
           req.set_header("content-type","application/json")
-          data = json.dumps({"calories": document["calories_10pct"].value,
-                             "carbs": document["carbs_10pct"].value})
+          data = json.dumps({"calories_10pct": document["calories_10pct"].value,
+                             "carbs_10pct": document["carbs_10pct"].value,
+                             "fat_10pct": document["fat_10pct"].value,
+                             "fiber_10pct": document["fiber_10pct"].value,
+                             "protein_10pct": document["protein_10pct"].value,
+                             "sodium_10pct": document["sodium_10pct"].value,
+                             "sugar_10pct": document["sugar_10pct"].value,
+                             "days": document["days"].values,
+                             "achievement": document["achievement"].value})
           req.send(data)
 
 
       document["click_button"].bind("click", get_output)
     </script>
     <!--Adding labels to the user inputs-->
-    <label for="calories_10pct">How many calories (cal) did you eat today?</label>
+    <label for="calories_10pct">How many calories did you eat today?</label>
     <textarea id="calories_10pct"></textarea>
     <br></br>
     <label for="carbs_10pct">How many carbs (grams) did you eat today?</label>
     <textarea id="carbs_10pct"></textarea>
+    <br></br>
+    <label for="fat_10pct">How much fat (grams) did you eat today?</label>
+    <textarea id="fat_10pct"></textarea>
+    <br></br>
+    <label for="fiber_10pct">How much fiber (grams) did you eat today?</label>
+    <textarea id="fiber_10pct"></textarea>
+    <br></br>
+    <label for="protein_10pct">How much protein (grams) did you eat today?</label>
+    <textarea id="protein_10pct"></textarea>
+    <br></br>
+    <label for="sodium_10pct">How much sodium (miligrams) did you eat today?</label>
+    <textarea id="sodium_10pct"></textarea>
+    <br></br>
+    <label for="sugar_10pct">How much sugar (grams) did you eat today?</label>
+    <textarea id="sugar_10pct"></textarea>
+    <br></br>
+    <label for="days">How many days have you been in the program?</label>
+    <textarea id="days"></textarea>
+    <br></br>
+    <label for="achievement">How many times have you reached your goal?</label>
+    <textarea id="achievement"></textarea>
+    <br></br>
     <button id="click_button">Click here</button>
     <br></br>
     <h1>User Output</h1>
