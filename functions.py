@@ -1,4 +1,5 @@
 import json
+import pandas
 
 
 def daily_totals(nest_dict):
@@ -43,5 +44,42 @@ def parsed_dict(df, nest_dict):
 def end_date_col(df):
     """Creates a new column with the previous date of the diary_date column"""
     for index, row in df.iterrows():
-        if (index != len(df) - 1):
-            df.loc[index, 'end_date'] = df.loc[index + 1, 'diary_date']
+        if index != len(df) - 1:
+            df.loc[index, "end_date"] = df.loc[index + 1, "diary_date"]
+
+
+def find_date(df):
+    prev_user = ""
+    start_date = None
+    churn_date = None
+    churned = False
+
+    prev_user = df.loc[0, "userid"]
+    start_date = df.loc[0, "diary_date"]
+
+    result = []
+    for index, row in df.iterrows():
+        user = row["userid"]
+        if prev_user == user:
+            if (row["end_date"] - row["diary_date"]) >= pandas.Timedelta(5, "D"):
+                if not churned:
+                    churn_date = row["diary_date"]
+                    record = {
+                        "userid": user,
+                        "start_date": start_date,
+                        "churn_date": churn_date,
+                    }
+                    result.append(record)
+                    churned = True
+        else:
+            if not churned:
+                record = {
+                    "userid": prev_user,
+                    "start_date": start_date,
+                    "churn_date": "",
+                }
+                result.append(record)
+            start_date = row["diary_date"]
+            churned = False
+            prev_user = user
+    return result
