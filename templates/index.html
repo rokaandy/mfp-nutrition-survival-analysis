@@ -13,7 +13,6 @@
     }
   </style>
   <body onload="brython()">
-    <!--Original version of User Input </h1>-->
     <h1>User Input</h1>
     <script type="text/python3">
       from browser import document, ajax
@@ -39,9 +38,10 @@
       document["click_button"].bind("click", get_output)
     </script>
     <!--Adding labels to the user inputs-->
-    <!--<label for="cal">How many calories did you eat today?</label>-->
+    <label for="calories_10pct">How many calories (cal) did you eat today?</label>
     <textarea id="calories_10pct"></textarea>
-    <!--<label for="carb">How many carbs did you eat today?</label>-->
+    <br></br>
+    <label for="carbs_10pct">How many carbs (grams) did you eat today?</label>
     <textarea id="carbs_10pct"></textarea>
     <button id="click_button">Click here</button>
     <br></br>
