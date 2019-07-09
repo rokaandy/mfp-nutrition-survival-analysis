@@ -12,7 +12,7 @@ def index():
 
 
 # Load pickle with logistic regression model
-with open("pkl/model.pkl", "rb") as f:
+with open("webapp/model.pkl", "rb") as f:
     model = pickle.load(f)
 
 
