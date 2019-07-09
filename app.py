@@ -1,6 +1,5 @@
 from flask import Flask, request, render_template, jsonify
 import pandas as pd
-import numpy as np
 import pickle
 
 app = Flask(__name__, static_url_path="")
@@ -10,15 +9,9 @@ def index():
     """Return the main page."""
     return render_template("index.html")
 
+# Load pickle with logistic regression model
 with open('pkl/model.pkl', 'rb') as f:
     model = pickle.load(f)
-
-# def prediction(user_input, model):
-#     """Predict when a user will drop off the application"""
-#     # user_input = np.array((user_input))
-#     df = pd.DataFrame(user_input).T
-#     probability = model.predict_proba(df)
-#     return probability
 
 @app.route("/output", methods=["GET", "POST"])
 def output():
@@ -26,10 +19,9 @@ def output():
     data = request.get_json(force=True)
     # print the user input data to console
     print(data)
-    # store user input data in dictionary
+    # store user input data in pandas dataframe
     df = pd.DataFrame(data=[data])
-    # print(df)
-    # Store predictions from model
+    # store predictions from model
     predictions = model.predict_proba(df)
     output = {"probability_churn": predictions[0][0],
               "probability_not_churn": predictions[0][1]}
