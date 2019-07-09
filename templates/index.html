@@ -13,7 +13,7 @@
     }
   </style>
   <body onload="brython()">
-    <h1>User Input</h1>
+    <h1>Nutritional Survival Analysis</h1>
     <script type="text/python3">
       from browser import document, ajax
       import json
@@ -45,25 +45,25 @@
       document["click_button"].bind("click", get_output)
     </script>
     <!--Adding labels to the user inputs-->
-    <label for="calories_10pct">Did you meet your calorie goal (within 10%)?</label>
+    <label for="calories_10pct">Within 10%, did you meet your calorie goal? (1 = Yes, 0 = No)</label>
     <textarea id="calories_10pct"></textarea>
     <br></br>
-    <label for="carbs_10pct">Did you meet your carbs goal (within 10%)?</label>
+    <label for="carbs_10pct">Within 10%, did you meet your carbs goal (1 = Yes, 0 = No)?</label>
     <textarea id="carbs_10pct"></textarea>
     <br></br>
-    <label for="fat_10pct">Did you meet your fats goal (within 10%)?</label>
+    <label for="fat_10pct">Within 10%, did you meet your fats goal (1 = Yes, 0 = No)?</label>
     <textarea id="fat_10pct"></textarea>
     <br></br>
-    <label for="fiber_10pct">Did you meet your fiber goal (within 10%)?</label>
+    <label for="fiber_10pct">Within 10%, did you meet your fiber goal (1 = Yes, 0 = No)?</label>
     <textarea id="fiber_10pct"></textarea>
     <br></br>
-    <label for="protein_10pct">Did you meet your protein goal (within 10%)?</label>
+    <label for="protein_10pct">Within 10%, did you meet your protein goal (1 = Yes, 0 = No)?</label>
     <textarea id="protein_10pct"></textarea>
     <br></br>
-    <label for="sodium_10pct">Did you meet your sodium goal (within 10%)?</label>
+    <label for="sodium_10pct">Within 10%, did you meet your sodium goal (1 = Yes, 0 = No)?</label>
     <textarea id="sodium_10pct"></textarea>
     <br></br>
-    <label for="sugar_10pct">Did you meet your sugar goal (within 10%)?</label>
+    <label for="sugar_10pct">Within 10%, did you meet your sugar goal (1 = Yes, 0 = No)?</label>
     <textarea id="sugar_10pct"></textarea>
     <br></br>
     <label for="days">What is your longest streak in the program, without breaking more than 5 days?</label>
@@ -74,8 +74,8 @@
     <br></br>
     <button id="click_button">Click here</button>
     <br></br>
-    <h1>User Output</h1>
-    <!--try replacing yellow with div to remove the yellow styling-->
+    <h1>Results:</h1>
+    <!--Replace yellow with div to remove the yellow styling-->
     <yellow id="result"></yellow>
   </body>
 </html>
