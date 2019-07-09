@@ -41,7 +41,7 @@ def parsed_dict(df, nest_dict):
     return results
 
 
-def end_date_col(df):
+def prev_date_col(df):
     """Creates a new column with the previous date of the diary_date column"""
     for index, row in df.iterrows():
         if index != len(df) - 1:

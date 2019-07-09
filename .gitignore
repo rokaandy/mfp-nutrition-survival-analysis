@@ -1,6 +1,6 @@
 #ignore large data files
 data/
-pkl/end_date.pkl
+pkl/clean_df.pkl
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
