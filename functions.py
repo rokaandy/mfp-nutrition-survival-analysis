@@ -49,6 +49,7 @@ def prev_date_col(df):
 
 
 def find_date(df):
+    """Create dataframe from start date to churn date"""
     prev_user = ""
     start_date = None
     churn_date = None
