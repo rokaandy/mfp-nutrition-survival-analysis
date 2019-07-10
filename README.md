@@ -1,4 +1,5 @@
 ## Nutritional Survival Analysis
+**Created by:** Andy Luc
 
 ### Business Understanding
 Fitness has always been a topic of interest to me and I am fairly active when it comes to staying in shape. Part of that journey involves the consistency of tracking nutritional intake. One of the most popular apps today is MyFitnessPal, which tracks this on a daily basis.
@@ -26,7 +27,7 @@ As part of the exploratory data analysis before any modeling was done, I made a 
 I have included a pickle file named `svl.pkl` near the modeling stage of the notebook to use. 
 
 ### Modeling
-The initial model was using Sklearn's Logistic Regression.
+The initial model uses Logistic Regression.
 
 Subsequently, I used the Cox Proportional Hazards Model in survival regression to analyze the p-value and coefficients of each feature. Also, to see where certain features over a period of time affect the churn rate.
 
@@ -34,8 +35,15 @@ Subsequently, I used the Cox Proportional Hazards Model in survival regression t
 The Logistic Regression Model was evaluated with a F1-score of 0.85, which represents the harmonic mean of precision and recall. I also scored it with a ROC Curve, achieving an AUC = 0.70. The "Area Under The Curve" tells us how well the model does in identifying true positives and false positives or in other words, how well it can distinguish between 0's as 0's and 1's as 1's (users still using the app or have churned).
 
 ### Deployment
-#### Flask (with Logistic Regression Model):
+The basis of my modeling was mainly to be used with the internal business team, and not necessarily something to set a user interface with. However, I did create a webpage using flask with a pickled model that users can easily interact with to present probability of users on MyFitnessPal churning or not.
+
+#### Using Flask locally (with Logistic Regression Model):
 1. `pip install Flask`
 2. In console of the main directory, type: `FLASK_APP=webapp.app flask run`
 3. Open a web browser
 4. Type: `http://localhost:5000`
+5. To test, all spaces must be filled in to make a prediction
+
+### Next Steps
+- Write a blog to enhance the knowledge behind survival analysis, which many businesses can benefit from as it is a common problem.
+- Cluster using K-Means to find similarly related groups based only on user inputs.
