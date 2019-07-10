@@ -2,7 +2,7 @@ import json
 import pandas
 
 
-def daily_totals(nest_dict):
+def get_totals(nest_dict):
     """Creates list of keys and values from the first dictionary, and zips them together"""
     total_cols = [
         list(nest_dict.keys())[0] + "_" + x["name"].lower() for x in nest_dict["total"]
@@ -14,7 +14,7 @@ def daily_totals(nest_dict):
     return total_dict
 
 
-def daily_goals(nest_dict):
+def get_goals(nest_dict):
     """Creates list of keys and values from the second dictionary, and zips them together"""
     goal_cols = [
         list(nest_dict.keys())[1] + "_" + k["name"].lower() for k in nest_dict["goal"]
@@ -32,7 +32,7 @@ def merge(dict1, dict2):
     return res
 
 
-def parsed_dict(df, nest_dict):
+def get_full_parse(df, nest_dict):
     """Iterrates through entire parsed dataframe and appends merged rows"""
     results = []
     for row in df["daily_goal"].values:
@@ -41,7 +41,7 @@ def parsed_dict(df, nest_dict):
     return results
 
 
-def prev_date_col(df):
+def add_prev_date(df):
     """Creates a new column with the previous date of the diary_date column"""
     for index, row in df.iterrows():
         if index != len(df) - 1:
