@@ -31,7 +31,7 @@ The initial model was using Sklearn's Logistic Regression.
 Subsequently, I used the Cox Proportional Hazards Model in survival regression to analyze the p-value and coefficients of each feature. Also, to see where certain features over a period of time affect the churn rate.
 
 ### Evaluation
-The Logistic Regression Model was evaluated with a F1-score of 0.85, which represents the harmonic mean of precision and recall. I also scored it with a ROC Curve, achieving an AUC = 0.70. The "Area Under The Curve" tells us how well the model does in identifying true positives and false positives or in other words, how well it can distinguish between 0's and 1's.
+The Logistic Regression Model was evaluated with a F1-score of 0.85, which represents the harmonic mean of precision and recall. I also scored it with a ROC Curve, achieving an AUC = 0.70. The "Area Under The Curve" tells us how well the model does in identifying true positives and false positives or in other words, how well it can distinguish between 0's as 0's and 1's as 1's (users still using the app or have churned).
 
 ### Deployment
 #### Flask (with Logistic Regression Model):
