@@ -1,5 +1,6 @@
 ## MFP Nutrition Survival Analysis
-**Created by:** Andy Luc
+**Created by:** Andy Luc	 
+**Slide Deck Presentation:** [MFP Nutrition Survival Analysis.pdf](https://github.com/rokaandy/nutritional_survival_analysis/blob/master/MFP%20Nutrition%20Survival%20Analysis.pdf)
 
 ### Business Understanding
 Fitness has always been a topic of interest to me and I am fairly active when it comes to staying in shape. Part of that journey involves the consistency of tracking nutritional intake. One of the most popular apps today is MyFitnessPal, which tracks this on a daily basis.
