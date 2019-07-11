@@ -35,7 +35,6 @@ Subsequently, I used the Cox Proportional Hazards Model in survival regression t
 
 ### Evaluation
 The Logistic Regression Model was evaluated with a F1-score of 0.85, which represents the harmonic mean of precision and recall. I also scored it with a ROC Curve, achieving an AUC = 0.70. The "Area Under The Curve" tells us how well the model does in identifying true positives and false positives or in other words, how well it can distinguish between 0's as 0's and 1's as 1's (users still using the app or have churned).
-![ROC Curve](https://github.com/rokaandy/mfp-nutrition-survival-analysis/blob/master/png/roc.png)
 
 ### Deployment
 The basis of my modeling was mainly to be used with the internal business team, and not necessarily something to set a user interface with. However, I did create a webpage using flask with a pickled model that users can easily interact with to present probability of users on MyFitnessPal churning or not.
