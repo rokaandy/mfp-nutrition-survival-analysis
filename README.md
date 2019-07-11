@@ -24,6 +24,7 @@ Note: As the MyFitnessPal API used in this repository is confidential, please vi
 The API was provided as a .tsv file, which I had initially read into a pandas dataframe. With exception to the userid and date, it contained nested lists of dictionaries which had to be parsed. Once parsed into a number of corresponding columns, a timeline of the data was created to determine whether or not a user has churned. Knowing that the dataset has daily inputs, I could find out how many days a user has used the app by grouping the userid's.
 
 As part of the exploratory data analysis before any modeling was done, I made a heatmap in seaborn to show the collinearity of the features.
+![heatmap](https://github.com/rokaandy/mfp-nutrition-survival-analysis/blob/master/png/heatmap.png)
 
 I have included a pickle file named `svl.pkl` near the modeling stage of the notebook to use. 
 
