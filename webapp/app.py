@@ -28,7 +28,7 @@ def output():
     predictions = model.predict_proba(df)
     output = {
         "probability to stop using the app": predictions[0][0],
-        "probability to continue using the app ": predictions[0][1],
+        "probability to continue using the app": predictions[0][1],
     }
     # output dictionary to web
     return jsonify(output)
