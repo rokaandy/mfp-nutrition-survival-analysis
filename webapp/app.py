@@ -27,8 +27,8 @@ def output():
     # store predictions from model
     predictions = model.predict_proba(df)
     output = {
-        "probability_churn": predictions[0][0],
-        "probability_not_churn": predictions[0][1],
+        "probability to stop using the app": predictions[0][0],
+        "probability to continue using the app ": predictions[0][1],
     }
     # output dictionary to web
     return jsonify(output)
