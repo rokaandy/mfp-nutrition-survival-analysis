@@ -37,7 +37,7 @@ def get_full_parse(df, nest_dict):
     results = []
     for row in df["daily_goal"].values:
         nest_dict = json.loads(row)
-        results.append(merge(daily_goals(nest_dict), daily_totals(nest_dict)))
+        results.append(merge(get_goals(nest_dict), get_totals(nest_dict)))
     return results
 
 

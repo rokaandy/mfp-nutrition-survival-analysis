@@ -20,12 +20,10 @@ with open("webapp/model.pkl", "rb") as f:
 def output():
     """Retun text from user input"""
     data = request.get_json(force=True)
-    # print the user input data to console
-    print(data)
     # store user input data in pandas dataframe
     df = pd.DataFrame(data=[data])
     # store predictions from model
-    predictions = model.predict_proba(df)
+    predictions = model.predict_proba(df).round(2)
     output = {
         "probability to stop using the app": predictions[0][0],
         "probability to continue using the app": predictions[0][1],
