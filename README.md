@@ -1,5 +1,5 @@
 ## MFP Nutrition Survival Analysis
-**Created by:** Andy Luc	 
+**Created by:** Andy Luc	                                        
 **Slide Deck Presentation:** [MFP Nutrition Survival Analysis.pdf](https://github.com/rokaandy/nutritional_survival_analysis/blob/master/MFP%20Nutrition%20Survival%20Analysis.pdf)
 
 ### Business Understanding
